@@ -13,6 +13,7 @@
 
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
     
+    <!-- O Parent do SpringBoot é onde tem todas as dependência básicas pra ele funcionar -->
 	<parent>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-parent</artifactId>
@@ -20,10 +21,36 @@
 	</parent>
 
     <dependencies>
+    	<!-- É quem starta o Spring Boot, a annotation @SpringBootApplication é dessa dependencia -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+        
+        <!-- É o import da annotation @RestController -->
+        <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        
+        <!-- Starter do para manipulação de dados -->
+     <!--    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency> -->
+        
+        <!-- Segurança -->
+       <!--  <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency> -->
+        
+        <!-- de test unitário -->
+       <!--  <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+         -->
     </dependencies>
 
     <build>
