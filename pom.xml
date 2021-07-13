@@ -22,7 +22,7 @@
 
     <dependencies>
     	<!-- É quem starta o Spring Boot, a annotation @SpringBootApplication é dessa dependencia -->
-        <dependency>
+    	<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
@@ -34,23 +34,30 @@
         </dependency>
         
         <!-- Starter do para manipulação de dados -->
-     <!--    <dependency>
+     	<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency> -->
+        </dependency>
         
         <!-- Segurança -->
-       <!--  <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency> -->
         
         <!-- de test unitário -->
-       <!--  <dependency>
+       	<!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-         -->
+       	</dependency> -->
+        
+		<!-- Banco de dados em memória -->
+		<dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		</dependency>
+        
+        
     </dependencies>
 
     <build>
