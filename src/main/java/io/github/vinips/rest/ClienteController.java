@@ -37,7 +37,7 @@ public class ClienteController {
 	public Cliente findById(@PathVariable Integer id) {
 		// Se encontrar o cliente, retorna um ele em Json. Se não encontrar ele retorna
 		// um Not_Found.
-		return cRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+		return cRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
 	}
 
 	@DeleteMapping("{id}")
@@ -53,7 +53,7 @@ public class ClienteController {
 		cRepository.findById(id).map(cliente -> {
 			cRepository.delete(cliente);
 			return Void.TYPE;
-		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
 	}
 	
 	//@PutMapping é utilizado para atualizar completamente um recurso
@@ -63,7 +63,7 @@ public class ClienteController {
 		cRepository.findById(id).map(clienteFound -> {
 			updatedClient.setId(clienteFound.getId());
 			return cRepository.save(updatedClient);
-		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
 	}
 
 }
